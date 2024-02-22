@@ -15,7 +15,6 @@ struct CoinRowView: View {
                 .font(.caption)
                 .foregroundStyle(.gray)
             
-            
             //image
             
             Image(systemName: "bitcoinsign.circle.fill")
@@ -37,7 +36,7 @@ struct CoinRowView: View {
                     .foregroundStyle(.gray)
                     .padding(.leading, 6)
             }
-//            .padding(.leading, 2)
+            .padding(.leading, 2)
             
             //coin price info
             
@@ -54,7 +53,6 @@ struct CoinRowView: View {
                     .padding(.leading, 6)
                     .foregroundStyle(.green)
             }
-            
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
