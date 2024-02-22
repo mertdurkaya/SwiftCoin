@@ -51,9 +51,7 @@ struct Coin: Codable, Identifiable {
         case sparklineIn7D = "sparkline_in_7d"
         case priceChangePercentage24HInCurrency = "price_change_percentage_24h_in_currency"
     }
-    
-    // create an example coin
-    
+
     static let example = Coin(id: "bitcoin", symbol: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579", currentPrice: 50000, marketCap: 1000000000000, marketCapRank: 1, fullyDilutedValuation: 1000000000000, totalVolume: 1000000000000, high24H: 50000, low24H: 50000, priceChange24H: 50000, priceChangePercentage24H: 50000, marketCapChange24H: 50000, marketCapChangePercentage24H: 50000, circulatingSupply: 50000, totalSupply: 50000, maxSupply: 50000, ath: 50000, athChangePercentage: 50000, athDate: "2024-02-22", atl: 50000, atlChangePercentage: 50000, atlDate: "2024-02-22", lastUpdated: "2024-02-22", sparklineIn7D: SparklineIn7D(price: [50000, 50000, 50000, 50000, 50000, 50000, 50000]), priceChangePercentage24HInCurrency: 50000)
 }
 
