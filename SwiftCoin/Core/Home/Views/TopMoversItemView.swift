@@ -26,13 +26,13 @@ struct TopMoversItemView: View {
                     .font(.callout)
                     .fontWeight(.bold)
                 
-                Text("\(coin.currentPrice)")
+                Text(coin.currentPrice.toCurrency())
                     .font(.caption)
                     .foregroundStyle(.gray)
             }
-            Text("\(coin.priceChangePercentage24H)")
+            Text(coin.priceChangePercentage24H.toPercentage())
                 .font(.title2)
-                .foregroundStyle(.green)
+                .foregroundStyle(coin.priceChangePercentage24H > 0 ? .green : .red)
         }
         .frame(width: 140, height: 140)
         .overlay(

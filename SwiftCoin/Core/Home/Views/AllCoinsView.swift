@@ -18,11 +18,8 @@ struct AllCoinsView: View {
                 .padding()
             HStack {
                 Text("Coin")
-                
                 Spacer()
-                
                 Text("Price")
-                
             }
             .foregroundStyle(.gray)
             .font(.caption)
