@@ -9,6 +9,9 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
+    @Published var coins = [Coin]()
+    @Published var topMovingCoins = [Coin]()
+    
     init() {
         fetchCoins()
     }
@@ -32,10 +35,20 @@ class HomeViewModel: ObservableObject {
        
             do {
                 let coins = try JSONDecoder().decode([Coin].self, from: data)
+                DispatchQueue.main.async {
+                    self.coins = coins
+                    self.configTopMovers()
+                }
                 print("DEBUG: Coins -> \(coins)")
             } catch {
                 print("DEBUG: Error -> \(error.localizedDescription)")
             }
         }.resume()
+    }
+    
+    func configTopMovers() {
+        let topMovers = coins.sorted { $0.priceChangePercentage24H > $1.priceChangePercentage24H }
+        self.topMovingCoins = Array(topMovers.prefix(10))
+        print("DEBUG: Top Movers -> \(topMovers)")
     }
 }
